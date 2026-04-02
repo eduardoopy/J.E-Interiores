@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J.E Interiores</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="hero">
+    <div>
+      <h1>J.E Interiores</h1>
+      <p>Conforto e estilo para sua casa</p>
+      <button class="hero-btn" onclick="document.getElementById('busca').focus()">Veja nossos lançamentos</button>
+    </div>
+  </header>
+
+  <nav class="topo">
+    <input type="text" id="busca" placeholder="Buscar..." onkeyup="filtrarProdutos()">
+    <select id="categoria" onchange="filtrarProdutos()">
+      <option value="todos">Todos</option>
+      <option value="sofa">Sofás</option>
+      <option value="mesa">Mesas</option>
+      <option value="poltrona">Poltronas</option>
+    </select>
+    <div class="carrinho" onclick="abrirCarrinho()">
+      🛒 <span id="contador">0</span>
+    </div>
+  </nav>
+
+  <main class="container" id="produtos"></main>
+
+  <!-- MODAL PRODUTO -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModal()">×</span>
+      <img id="modal-img" alt="Imagem do produto" />
+      <div id="miniaturas"></div>
+      <button onclick="toggleDark()">🌙 Modo Escuro</button>
+      <h2 id="modal-nome"></h2>
+      <p id="modal-preco"></p>
+      <div id="modal-detalhes"></div>
+    </div>
+  </div>
+
+  <!-- MODAL CARRINHO -->
+  <div class="modal" id="carrinhoModal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharCarrinho()">×</span>
+      <h2>Seu Carrinho</h2>
+      <div id="listaCarrinho"></div>
+      <button onclick="finalizarCompra()">Finalizar no WhatsApp</button>
+    </div>
+  </div>
+
+  <footer>
+    <h2>J.E Interiores</h2>
+    <p>📞 (62) 98182-3353</p>
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/5562981823353?text=Olá!%20Tenho%20interesse%20nos%20produtos" target="_blank" rel="noopener noreferrer" title="Falar no WhatsApp">📱</a>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
