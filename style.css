@@ -11,6 +11,10 @@
   --shadow: 0 12px 28px rgba(18, 38, 80, 0.12);
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', sans-serif;
@@ -412,6 +416,141 @@ footer {
 .floating-whatsapp:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 24px rgba(37, 211, 102, 0.45);
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    height: min(520px, 70vh);
+    background-size: cover;
+  }
+
+  .topo {
+    width: min(100%, 1100px);
+    margin: -40px auto 20px;
+    padding: 18px 20px;
+  }
+
+  .topo input,
+  .topo select {
+    flex: 1 1 220px;
+    min-width: 0;
+  }
+
+  .card img {
+    height: 300px;
+  }
+
+  #modal-img {
+    height: 420px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero {
+    height: 500px;
+    padding: 0 16px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .topo {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    margin: 0 auto 20px;
+    width: calc(100% - 24px);
+    padding: 16px;
+  }
+
+  .topo input,
+  .topo select {
+    width: 100%;
+  }
+
+  .carrinho {
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
+  .container {
+    padding: 8px 16px 28px;
+  }
+
+  .card img {
+    height: 260px;
+  }
+
+  .card-content {
+    padding: 14px 12px 16px;
+  }
+
+  #miniaturas {
+    flex-wrap: wrap;
+  }
+
+  .thumb {
+    width: 52px;
+    height: 52px;
+  }
+
+  .floating-whatsapp {
+    right: 16px;
+    bottom: 16px;
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 420px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .topo {
+    padding: 14px;
+  }
+
+  .container {
+    padding: 8px 12px 24px;
+  }
+
+  .card img {
+    height: 220px;
+  }
+
+  .modal-content {
+    margin: 16px auto;
+    width: calc(100% - 20px);
+  }
+
+  #modal-img {
+    height: 300px;
+  }
+
+  .toast {
+    right: 12px;
+    left: 12px;
+  }
 }
 
 .hero-btn {
