@@ -473,21 +473,26 @@ footer {
   }
 
   .topo {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 14px;
+    display: flex;
+    flex-direction: row;   /* deixa lado a lado */
+    align-items: center;
+    gap: 10px;
     margin: 0 auto 20px;
     width: calc(100% - 24px);
     padding: 16px;
+    flex-wrap: nowrap;     /* evita quebrar linha */
   }
 
   .topo input,
-  .topo select,
-  .carrinho {
-    width: 100%;
+  .topo select {
+    flex: 1;
+    min-width: 0;
+    max-width: none;
+    width: auto;
   }
 
   .carrinho {
+    width: 100%;
     margin-left: 0;
     justify-content: flex-start;
   }
@@ -530,7 +535,6 @@ footer {
     font-size: 22px;
   }
 }
-
 @media (max-width: 480px) {
   .hero {
     height: min(420px, 55vh);
