@@ -473,29 +473,43 @@ footer {
   }
 
   .topo {
-    display: flex;
-    flex-direction: row;   /* deixa lado a lado */
-    align-items: center;
-    gap: 10px;
-    margin: 0 auto 20px;
-    width: calc(100% - 24px);
-    padding: 16px;
-    flex-wrap: nowrap;     /* evita quebrar linha */
-  }
+  display: flex;
+  flex-direction: row;      /* deixa lado a lado */
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto 20px;
+  width: calc(100% - 24px);
+  padding: 14px;
+  flex-wrap: wrap;
+}
 
-  .topo input,
-  .topo select {
-    flex: 1;
-    min-width: 0;
-    max-width: none;
-    width: auto;
-  }
+/* busca maior */
+.topo input {
+  flex: 2 1 0;
+  min-width: 0;
+  max-width: none;
+  height: 42px;
+  padding: 8px 10px;
+  font-size: 14px;
+}
 
-  .carrinho {
-    width: 100%;
-    margin-left: 0;
-    justify-content: flex-start;
-  }
+/* filtro menor */
+.topo select {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: none;
+  height: 42px;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+/* carrinho vai pra baixo */
+.carrinho {
+  width: 100%;
+  margin-left: 0;
+  justify-content: flex-start;
+  margin-top: 6px;
+}
 
   .container {
     padding: 10px 16px 28px;
