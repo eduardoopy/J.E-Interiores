@@ -431,8 +431,13 @@ footer {
     background-size: cover;
   }
 
+  .hero div {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
   .topo {
-    width: min(100%, 1100px);
+    width: min(100%, 1080px);
     margin: -40px auto 20px;
     padding: 18px 20px;
   }
@@ -444,7 +449,8 @@ footer {
   }
 
   .card img {
-    height: 300px;
+    aspect-ratio: 4 / 3;
+    height: auto;
   }
 
   #modal-img {
@@ -454,7 +460,7 @@ footer {
 
 @media (max-width: 680px) {
   .hero {
-    height: 500px;
+    height: min(480px, 55vh);
     padding: 0 16px;
   }
 
@@ -476,7 +482,8 @@ footer {
   }
 
   .topo input,
-  .topo select {
+  .topo select,
+  .carrinho {
     width: 100%;
   }
 
@@ -486,15 +493,24 @@ footer {
   }
 
   .container {
-    padding: 8px 16px 28px;
+    padding: 10px 16px 28px;
   }
 
   .card img {
-    height: 260px;
+    height: auto;
+    aspect-ratio: 4 / 3;
   }
 
   .card-content {
     padding: 14px 12px 16px;
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+
+  .card-actions .btn-small {
+    width: 100%;
   }
 
   #miniaturas {
@@ -517,7 +533,7 @@ footer {
 
 @media (max-width: 480px) {
   .hero {
-    height: 420px;
+    height: min(420px, 55vh);
   }
 
   .hero h1 {
@@ -530,7 +546,7 @@ footer {
 
   .hero-btn {
     width: 100%;
-    max-width: 320px;
+    max-width: none;
   }
 
   .topo {
@@ -538,20 +554,28 @@ footer {
   }
 
   .container {
-    padding: 8px 12px 24px;
+    padding: 10px 12px 24px;
   }
 
   .card img {
-    height: 220px;
+    height: auto;
+    aspect-ratio: 4 / 3;
   }
 
   .modal-content {
     margin: 16px auto;
     width: calc(100% - 20px);
+    padding: 18px;
   }
 
   #modal-img {
-    height: 300px;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .modal-content button {
+    width: 100%;
+    margin-top: 10px;
   }
 
   .toast {
@@ -560,32 +584,26 @@ footer {
   }
 }
 
-.hero-btn {
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #fff;
-  background: linear-gradient(135deg, #00c3ff, #0069ff);
-  box-shadow: 0 12px 25px rgba(0, 105, 255, 0.35);
-  cursor: pointer;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
-  opacity: 0;
-  animation: fadeup 0.9s ease-out 0.5s forwards;
-}
+@media (max-width: 360px) {
+  .hero {
+    padding: 0 12px;
+  }
 
-.hero-btn:hover {
-  transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 16px 32px rgba(0, 105, 255, 0.45);
-  filter: brightness(1.09);
-}
+  .topo {
+    padding: 12px;
+  }
 
-@keyframes zoom {
-  from { background-size: 100%; }
-  to { background-size: 110%; }
-}
+  .hero h1 {
+    font-size: 1.75rem;
+  }
 
-@keyframes fadeup {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .floating-whatsapp {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
 }
