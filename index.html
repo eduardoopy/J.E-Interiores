@@ -16,6 +16,44 @@
     </div>
   </header>
 
+  <!-- MENU HAMBURGER -->
+  <button class="hamburger" onclick="toggleMenu()" title="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- OVERLAY PARA FECHAR MENU -->
+  <div class="menu-overlay" onclick="toggleMenu()" id="menuOverlay"></div>
+
+  <!-- MENU LATERAL -->
+  <div class="menu-lateral" id="menuLateral">
+    <div class="menu-header">
+      <h3>Menu</h3>
+      <span class="fechar-menu" onclick="toggleMenu()">×</span>
+    </div>
+    <div class="menu-content">
+      <div class="menu-item">
+        <label for="busca-menu">Buscar:</label>
+        <input type="text" id="busca-menu" placeholder="Buscar..." onkeyup="filtrarProdutos()">
+      </div>
+      <div class="menu-item">
+        <label for="categoria-menu">Categoria:</label>
+        <select id="categoria-menu" onchange="filtrarProdutos()">
+          <option value="todos">Todos</option>
+          <option value="sofa">Sofás</option>
+          <option value="mesa">Mesas</option>
+          <option value="poltrona">Poltronas</option>
+        </select>
+      </div>
+      <div class="menu-item">
+        <button class="btn btn-menu-carrinho" onclick="abrirCarrinho(); toggleMenu();">
+          🛒 Ver Carrinho <span id="contador-menu" class="contador-menu">0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <nav class="topo">
     <input type="text" id="busca" placeholder="Buscar..." onkeyup="filtrarProdutos()">
     <select id="categoria" onchange="filtrarProdutos()">
@@ -25,7 +63,7 @@
       <option value="poltrona">Poltronas</option>
     </select>
     <div class="carrinho" onclick="abrirCarrinho()">
-      🛒 <span id="contador">0</span>
+    <span id="contador">0</span>
     </div>
   </nav>
 
